@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Item/Icons/rock/rock_15.png" type="Texture" id=1]
+[ext_resource path="res://Item/BigRock.cs" type="Script" id=2]
+[ext_resource path="res://Item/Sound/RockAudio.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Item/Common/SmokeParticles.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Item/Icons/rock/rock_1.png" type="Texture" id=5]
+[ext_resource path="res://Item/Common/SpriteRandomizer.tscn" type="PackedScene" id=6]
+
+[node name="BigRock" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 1.36364, 1.36364 )
+texture = ExtResource( 1 )
+
+[node name="SpriteRandomizer" parent="Sprite" instance=ExtResource( 6 )]
+
+[node name="Sprite" type="Sprite" parent="Sprite/SpriteRandomizer"]
+visible = false
+texture = ExtResource( 5 )
+
+[node name="Sprite2" type="Sprite" parent="Sprite/SpriteRandomizer"]
+visible = false
+texture = ExtResource( 1 )
+
+[node name="Audio" parent="." instance=ExtResource( 3 )]
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Particles2D" parent="." instance=ExtResource( 4 )]
+position = Vector2( 0, 33 )
+scale = Vector2( 3, 3 )

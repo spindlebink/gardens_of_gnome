@@ -1,0 +1,67 @@
+[gd_resource type="Theme" load_steps=11 format=2]
+
+[ext_resource path="res://GameUI/Resources/NunitoBig.tres" type="DynamicFont" id=1]
+[ext_resource path="res://GameUI/Resources/NunitoReg.tres" type="DynamicFont" id=2]
+[ext_resource path="res://GameUI/Resources/NunitoBoldReg.tres" type="DynamicFont" id=3]
+[ext_resource path="res://GameUI/Resources/panel.png" type="Texture" id=5]
+[ext_resource path="res://GameUI/Resources/green_button.png" type="Texture" id=6]
+
+[sub_resource type="StyleBoxTexture" id=9]
+texture = ExtResource( 6 )
+region_rect = Rect2( 0, 0, 128, 64 )
+margin_left = 12.0
+margin_right = 12.0
+margin_top = 12.0
+margin_bottom = 12.0
+modulate_color = Color( 0.85, 0.85, 0.85, 1 )
+
+[sub_resource type="StyleBoxTexture" id=11]
+texture = ExtResource( 6 )
+region_rect = Rect2( 0, 0, 128, 64 )
+margin_left = 12.0
+margin_right = 12.0
+margin_top = 12.0
+margin_bottom = 12.0
+
+[sub_resource type="StyleBoxTexture" id=10]
+texture = ExtResource( 6 )
+region_rect = Rect2( 0, 0, 128, 64 )
+margin_left = 12.0
+margin_right = 12.0
+margin_top = 12.0
+margin_bottom = 12.0
+modulate_color = Color( 0.65, 0.65, 0.65, 1 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxTexture" id=12]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 64, 64 )
+margin_left = 8.0
+margin_right = 8.0
+margin_top = 4.0
+margin_bottom = 12.0
+
+[resource]
+default_font = ExtResource( 1 )
+Button/colors/font_color = Color( 0.054902, 0.439216, 0.239216, 1 )
+Button/colors/font_color_focus = Color( 0.054902, 0.439216, 0.239216, 1 )
+Button/colors/font_color_hover = Color( 0.054902, 0.439216, 0.239216, 1 )
+Button/colors/font_color_pressed = Color( 0.054902, 0.439216, 0.239216, 1 )
+Button/styles/hover = SubResource( 9 )
+Button/styles/normal = SubResource( 11 )
+Button/styles/pressed = SubResource( 10 )
+HSeparator/constants/separation = 6
+HSeparator/styles/separator = SubResource( 7 )
+Label/colors/font_color = Color( 0.054902, 0.278431, 0.145098, 1 )
+Label/constants/line_spacing = 1
+MarginContainer/constants/margin_bottom = 4
+MarginContainer/constants/margin_left = 4
+MarginContainer/constants/margin_right = 4
+MarginContainer/constants/margin_top = 4
+PanelContainer/styles/panel = SubResource( 12 )
+RichTextLabel/colors/default_color = Color( 0.054902, 0.278431, 0.145098, 1 )
+RichTextLabel/constants/line_separation = 1
+RichTextLabel/fonts/bold_font = ExtResource( 3 )
+RichTextLabel/fonts/normal_font = ExtResource( 2 )

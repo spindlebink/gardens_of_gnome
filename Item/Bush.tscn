@@ -1,0 +1,43 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Item/Sound/ShovelAudio.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Item/Bush.cs" type="Script" id=3]
+[ext_resource path="res://Item/Common/SpriteRandomizer.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Item/Icons/bush/bush_2.png" type="Texture" id=5]
+[ext_resource path="res://Item/Icons/bush/bush_15.png" type="Texture" id=6]
+[ext_resource path="res://Item/Icons/bush/bush_1.png" type="Texture" id=7]
+[ext_resource path="res://Item/Common/SmokeParticles.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Item/Icons/bush/bush_25.png" type="Texture" id=9]
+
+[node name="Bush" type="Node2D"]
+scale = Vector2( 1.40855, 1.17883 )
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, -5 )
+scale = Vector2( 0.276198, 0.276198 )
+texture = ExtResource( 7 )
+
+[node name="SpriteRandomizer" parent="Sprite" instance=ExtResource( 4 )]
+
+[node name="Sprite" type="Sprite" parent="Sprite/SpriteRandomizer"]
+visible = false
+texture = ExtResource( 5 )
+
+[node name="Sprite2" type="Sprite" parent="Sprite/SpriteRandomizer"]
+visible = false
+texture = ExtResource( 7 )
+
+[node name="Sprite3" type="Sprite" parent="Sprite/SpriteRandomizer"]
+visible = false
+texture = ExtResource( 6 )
+
+[node name="Sprite4" type="Sprite" parent="Sprite/SpriteRandomizer"]
+visible = false
+texture = ExtResource( 9 )
+
+[node name="Particles2D" parent="." instance=ExtResource( 8 )]
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Audio" parent="." instance=ExtResource( 1 )]

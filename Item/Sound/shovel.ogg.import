@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/shovel.ogg-57e781e6504a120b50a508009427e10e.oggstr"
+
+[deps]
+
+source_file="res://Item/Sound/shovel.ogg"
+dest_files=[ "res://.import/shovel.ogg-57e781e6504a120b50a508009427e10e.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

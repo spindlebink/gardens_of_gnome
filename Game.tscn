@@ -1,0 +1,990 @@
+[gd_scene load_steps=50 format=2]
+
+[ext_resource path="res://GameBoard/Tiles/dirt.png" type="Texture" id=1]
+[ext_resource path="res://Item/Pond4.tscn" type="PackedScene" id=2]
+[ext_resource path="res://GameUI/Resources/Theme.tres" type="Theme" id=3]
+[ext_resource path="res://GameUI/ItemTypeSelector/ItemTypeSelector.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Placer/Placer.cs" type="Script" id=5]
+[ext_resource path="res://Game.cs" type="Script" id=6]
+[ext_resource path="res://GameBoard/GameBoard.cs" type="Script" id=7]
+[ext_resource path="res://Item/Tree1.tscn" type="PackedScene" id=8]
+[ext_resource path="res://GameUI/SelectorArea.cs" type="Script" id=9]
+[ext_resource path="res://Item/Rock.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Item/BigRock.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Placer/CellValidityIndicator.cs" type="Script" id=12]
+[ext_resource path="res://Item/Tree2.tscn" type="PackedScene" id=13]
+[ext_resource path="res://GameUI/MouseCapture.cs" type="Script" id=14]
+[ext_resource path="res://GameUI/PlacedLabel.cs" type="Script" id=15]
+[ext_resource path="res://GameUI/Resources/NunitoReg.tres" type="DynamicFont" id=16]
+[ext_resource path="res://GameUI/TotalScoreLabel.cs" type="Script" id=17]
+[ext_resource path="res://Item/Clover.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Item/Gnome.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Music.ogg" type="AudioStream" id=20]
+[ext_resource path="res://Item/Flar.tscn" type="PackedScene" id=21]
+[ext_resource path="res://GameUI/Resources/click.ogg" type="AudioStream" id=22]
+[ext_resource path="res://Item/Tree3.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Item/Bush.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Item/PondS.tscn" type="PackedScene" id=25]
+[ext_resource path="res://GameUI/Die.tscn" type="PackedScene" id=26]
+[ext_resource path="res://Item/Tree4.tscn" type="PackedScene" id=27]
+[ext_resource path="res://Item/LBush.tscn" type="PackedScene" id=28]
+[ext_resource path="res://Item/Blombuske.tscn" type="PackedScene" id=29]
+[ext_resource path="res://Item/Cattails.tscn" type="PackedScene" id=30]
+[ext_resource path="res://GameUI/Resources/thump.ogg" type="AudioStream" id=31]
+[ext_resource path="res://GameBoard/GridLines.cs" type="Script" id=32]
+[ext_resource path="res://GameUI/Resources/Orange_button.png" type="Texture" id=33]
+[ext_resource path="res://GameUI/ItemTypeSelector/GnomeItemTypeSelector.cs" type="Script" id=34]
+[ext_resource path="res://Item/Trawtraw.tscn" type="PackedScene" id=35]
+[ext_resource path="res://Item/Mymbleleaf.tscn" type="PackedScene" id=36]
+[ext_resource path="res://Item/Flar2.tscn" type="PackedScene" id=37]
+[ext_resource path="res://Item/Icons/House.png" type="Texture" id=38]
+[ext_resource path="res://GameBoard/Fence.png" type="Texture" id=39]
+[ext_resource path="res://GameUI/Resources/scrollclick.ogg" type="AudioStream" id=40]
+[ext_resource path="res://GameBoard/Tiles/sand.png" type="Texture" id=41]
+
+[sub_resource type="TileSet" id=4]
+0/name = "dirt.png 0"
+0/texture = ExtResource( 1 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 192, 64, 64 )
+0/tile_mode = 2
+0/autotile/icon_coordinate = Vector2( 0, 0 )
+0/autotile/tile_size = Vector2( 64, 64 )
+0/autotile/spacing = 0
+0/autotile/occluder_map = [  ]
+0/autotile/navpoly_map = [  ]
+0/autotile/priority_map = [  ]
+0/autotile/z_index_map = [  ]
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "dirt.png 1"
+1/texture = ExtResource( 1 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 192, 320 )
+1/tile_mode = 2
+1/autotile/icon_coordinate = Vector2( 0, 0 )
+1/autotile/tile_size = Vector2( 64, 64 )
+1/autotile/spacing = 0
+1/autotile/occluder_map = [  ]
+1/autotile/navpoly_map = [  ]
+1/autotile/priority_map = [  ]
+1/autotile/z_index_map = [  ]
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+2/name = "sand.png 2"
+2/texture = ExtResource( 41 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 0, 0, 192, 192 )
+2/tile_mode = 2
+2/autotile/icon_coordinate = Vector2( 0, 0 )
+2/autotile/tile_size = Vector2( 64, 64 )
+2/autotile/spacing = 0
+2/autotile/occluder_map = [  ]
+2/autotile/navpoly_map = [  ]
+2/autotile/priority_map = [  ]
+2/autotile/z_index_map = [  ]
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
+2/shapes = [  ]
+2/z_index = 0
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.129412, 0.894118, 0.286275, 0.901961 )
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.788235, 0.360784, 0.0156863, 0.639216 )
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id=15]
+bg_color = Color( 0, 0.25098, 0.101961, 0.121569 )
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxTexture" id=12]
+texture = ExtResource( 33 )
+region_rect = Rect2( 0, 0, 1024, 512 )
+margin_left = 64.0
+margin_right = 64.0
+modulate_color = Color( 0.88, 0.88, 0.88, 1 )
+
+[sub_resource type="StyleBoxTexture" id=13]
+texture = ExtResource( 33 )
+region_rect = Rect2( 0, 0, 1024, 512 )
+margin_left = 64.0
+margin_right = 64.0
+modulate_color = Color( 0.760784, 0.760784, 0.760784, 1 )
+
+[sub_resource type="StyleBoxTexture" id=14]
+texture = ExtResource( 33 )
+region_rect = Rect2( 0, 0, 1024, 512 )
+margin_left = 64.0
+margin_right = 64.0
+modulate_color = Color( 0.66, 0.66, 0.66, 1 )
+
+[sub_resource type="StyleBoxTexture" id=11]
+texture = ExtResource( 33 )
+region_rect = Rect2( 0, 0, 1024, 512 )
+margin_left = 64.0
+margin_right = 64.0
+
+[node name="Game" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 3 )
+script = ExtResource( 6 )
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 20 )
+autoplay = true
+
+[node name="GameBoard" type="TileMap" parent="."]
+position = Vector2( 497, 167 )
+tile_set = SubResource( 4 )
+format = 1
+tile_data = PoolIntArray( 0, 2, 0, 1, 2, 1, 2, 2, 1, 3, 2, 1, 4, 2, 1, 5, 2, 1, 6, 2, 1, 7, 2, 1, 8, 2, 1, 9, 2, 1, 10, 2, 1, 11, 2, 1, 12, 2, 1, 13, 2, 1, 14, 2, 1, 15, 2, 1, 16, 2, 1, 17, 2, 1, 18, 2, 1, 19, 2, 2, 65536, 2, 65536, 65537, 1, 196609, 65538, 1, 131073, 65539, 1, 131073, 65540, 1, 131073, 65541, 1, 131073, 65542, 1, 196610, 65543, 1, 196609, 65544, 1, 131073, 65545, 1, 131073, 65546, 1, 131073, 65547, 1, 131073, 65548, 1, 196610, 65549, 1, 196609, 65550, 1, 131073, 65551, 1, 131073, 65552, 1, 131073, 65553, 1, 131073, 65554, 1, 196610, 65555, 2, 65538, 131072, 2, 65536, 131073, 1, 65538, 131074, 0, 0, 131075, 0, 0, 131076, 0, 0, 131077, 0, 0, 131078, 1, 65536, 131079, 1, 65538, 131080, 0, 0, 131081, 0, 0, 131082, 0, 0, 131083, 0, 0, 131084, 1, 65536, 131085, 1, 65538, 131086, 0, 0, 131087, 0, 0, 131088, 0, 0, 131089, 0, 0, 131090, 1, 65536, 131091, 2, 65538, 196608, 2, 65536, 196609, 1, 65538, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 1, 131072, 196615, 1, 131074, 196616, 0, 0, 196617, 0, 0, 196618, 0, 0, 196619, 0, 0, 196620, 1, 131072, 196621, 1, 131074, 196622, 0, 0, 196623, 0, 0, 196624, 0, 0, 196625, 0, 0, 196626, 1, 65536, 196627, 2, 65538, 262144, 2, 65536, 262145, 1, 65538, 262146, 0, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, 262151, 0, 0, 262152, 0, 0, 262153, 0, 0, 262154, 0, 0, 262155, 0, 0, 262156, 0, 0, 262157, 0, 0, 262158, 0, 0, 262159, 0, 0, 262160, 0, 0, 262161, 0, 0, 262162, 1, 65536, 262163, 2, 65538, 327680, 2, 65536, 327681, 1, 65538, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 0, 327690, 0, 0, 327691, 0, 0, 327692, 0, 0, 327693, 0, 0, 327694, 0, 0, 327695, 0, 0, 327696, 0, 0, 327697, 0, 0, 327698, 1, 65536, 327699, 2, 65538, 393216, 2, 65536, 393217, 1, 262144, 393218, 1, 1, 393219, 1, 2, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0, 393223, 0, 0, 393224, 0, 0, 393225, 0, 0, 393226, 0, 0, 393227, 0, 0, 393228, 0, 0, 393229, 0, 0, 393230, 0, 0, 393231, 0, 0, 393232, 1, 0, 393233, 1, 1, 393234, 1, 262145, 393235, 2, 65538, 458752, 2, 65536, 458753, 1, 196609, 458754, 1, 131073, 458755, 1, 131074, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0, 458759, 1, 0, 458760, 1, 2, 458761, 0, 0, 458762, 0, 0, 458763, 1, 0, 458764, 1, 2, 458765, 0, 0, 458766, 0, 0, 458767, 0, 0, 458768, 1, 131072, 458769, 1, 131073, 458770, 1, 196610, 458771, 2, 65538, 524288, 2, 65536, 524289, 1, 65538, 524290, 0, 0, 524291, 0, 0, 524292, 0, 0, 524293, 0, 0, 524294, 0, 0, 524295, 1, 131072, 524296, 1, 131074, 524297, 0, 0, 524298, 0, 0, 524299, 1, 131072, 524300, 1, 131074, 524301, 0, 0, 524302, 0, 0, 524303, 0, 0, 524304, 0, 0, 524305, 0, 0, 524306, 1, 65536, 524307, 2, 65538, 589824, 2, 65536, 589825, 1, 65538, 589826, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589837, 0, 0, 589838, 0, 0, 589839, 0, 0, 589840, 0, 0, 589841, 0, 0, 589842, 1, 65536, 589843, 2, 65538, 655360, 2, 65536, 655361, 1, 65538, 655362, 0, 0, 655363, 0, 0, 655364, 0, 0, 655365, 0, 0, 655366, 0, 0, 655367, 0, 0, 655368, 0, 0, 655369, 0, 0, 655370, 0, 0, 655371, 0, 0, 655372, 0, 0, 655373, 0, 0, 655374, 0, 0, 655375, 0, 0, 655376, 0, 0, 655377, 0, 0, 655378, 1, 65536, 655379, 2, 65538, 720896, 2, 65536, 720897, 1, 65538, 720898, 0, 0, 720899, 0, 0, 720900, 0, 0, 720901, 0, 0, 720902, 0, 0, 720903, 1, 0, 720904, 1, 2, 720905, 0, 0, 720906, 0, 0, 720907, 1, 0, 720908, 1, 2, 720909, 0, 0, 720910, 0, 0, 720911, 0, 0, 720912, 0, 0, 720913, 0, 0, 720914, 1, 65536, 720915, 2, 65538, 786432, 2, 65536, 786433, 1, 262144, 786434, 1, 1, 786435, 1, 2, 786436, 0, 0, 786437, 0, 0, 786438, 0, 0, 786439, 1, 131072, 786440, 1, 131074, 786441, 0, 0, 786442, 0, 0, 786443, 1, 131072, 786444, 1, 131074, 786445, 0, 0, 786446, 0, 0, 786447, 0, 0, 786448, 1, 0, 786449, 1, 1, 786450, 1, 262145, 786451, 2, 65538, 851968, 2, 65536, 851969, 1, 196609, 851970, 1, 131073, 851971, 1, 131074, 851972, 0, 0, 851973, 0, 0, 851974, 0, 0, 851975, 0, 0, 851976, 0, 0, 851977, 0, 0, 851978, 0, 0, 851979, 0, 0, 851980, 0, 0, 851981, 0, 0, 851982, 0, 0, 851983, 0, 0, 851984, 1, 131072, 851985, 1, 131073, 851986, 1, 196610, 851987, 2, 65538, 917504, 2, 65536, 917505, 1, 65538, 917506, 0, 0, 917507, 0, 0, 917508, 0, 0, 917509, 0, 0, 917510, 0, 0, 917511, 0, 0, 917512, 0, 0, 917513, 0, 0, 917514, 0, 0, 917515, 0, 0, 917516, 0, 0, 917517, 0, 0, 917518, 0, 0, 917519, 0, 0, 917520, 0, 0, 917521, 0, 0, 917522, 1, 65536, 917523, 2, 65538, 983040, 2, 65536, 983041, 1, 65538, 983042, 0, 0, 983043, 0, 0, 983044, 0, 0, 983045, 0, 0, 983046, 0, 0, 983047, 0, 0, 983048, 0, 0, 983049, 0, 0, 983050, 0, 0, 983051, 0, 0, 983052, 0, 0, 983053, 0, 0, 983054, 0, 0, 983055, 0, 0, 983056, 0, 0, 983057, 0, 0, 983058, 1, 65536, 983059, 2, 65538, 1048576, 2, 65536, 1048577, 1, 65538, 1048578, 0, 0, 1048579, 0, 0, 1048580, 0, 0, 1048581, 0, 0, 1048582, 1, 0, 1048583, 1, 2, 1048584, 0, 0, 1048585, 0, 0, 1048586, 0, 0, 1048587, 0, 0, 1048588, 1, 0, 1048589, 1, 2, 1048590, 0, 0, 1048591, 0, 0, 1048592, 0, 0, 1048593, 0, 0, 1048594, 1, 65536, 1048595, 2, 65538, 1114112, 2, 65536, 1114113, 1, 65538, 1114114, 0, 0, 1114115, 0, 0, 1114116, 0, 0, 1114117, 0, 0, 1114118, 1, 65536, 1114119, 1, 65538, 1114120, 0, 0, 1114121, 0, 0, 1114122, 0, 0, 1114123, 0, 0, 1114124, 1, 65536, 1114125, 1, 65538, 1114126, 0, 0, 1114127, 0, 0, 1114128, 0, 0, 1114129, 0, 0, 1114130, 1, 65536, 1114131, 2, 65538, 1179648, 2, 65536, 1179649, 1, 262144, 1179650, 1, 1, 1179651, 1, 1, 1179652, 1, 1, 1179653, 1, 1, 1179654, 1, 262145, 1179655, 1, 262144, 1179656, 1, 1, 1179657, 1, 1, 1179658, 1, 1, 1179659, 1, 1, 1179660, 1, 262145, 1179661, 1, 262144, 1179662, 1, 1, 1179663, 1, 1, 1179664, 1, 1, 1179665, 1, 1, 1179666, 1, 262145, 1179667, 2, 65538, 1245184, 2, 131072, 1245185, 2, 131073, 1245186, 2, 131073, 1245187, 2, 131073, 1245188, 2, 131073, 1245189, 2, 131073, 1245190, 2, 131073, 1245191, 2, 131073, 1245192, 2, 131073, 1245193, 2, 131073, 1245194, 2, 131073, 1245195, 2, 131073, 1245196, 2, 131073, 1245197, 2, 131073, 1245198, 2, 131073, 1245199, 2, 131073, 1245200, 2, 131073, 1245201, 2, 131073, 1245202, 2, 131073, 1245203, 2, 131074 )
+script = ExtResource( 7 )
+
+[node name="ScrollClick" type="AudioStreamPlayer2D" parent="GameBoard"]
+position = Vector2( 644, 627 )
+stream = ExtResource( 40 )
+volume_db = -80.0
+autoplay = true
+
+[node name="GridLines" type="Node2D" parent="GameBoard"]
+position = Vector2( 64, 64 )
+script = ExtResource( 32 )
+Color = Color( 0.117647, 0.117647, 0.117647, 0.145098 )
+
+[node name="FenceSeg1" type="Node2D" parent="GameBoard"]
+position = Vector2( 91, 1205 )
+rotation = -1.57152
+scale = Vector2( 0.499401, 0.499401 )
+
+[node name="Fence" type="Sprite" parent="GameBoard/FenceSeg1"]
+position = Vector2( 67, -47 )
+scale = Vector2( 0.0679566, 0.0679566 )
+texture = ExtResource( 39 )
+
+[node name="Fence2" type="Sprite" parent="GameBoard/FenceSeg1"]
+position = Vector2( 190, -46 )
+scale = Vector2( 0.0679566, 0.0679566 )
+texture = ExtResource( 39 )
+
+[node name="Fence3" type="Sprite" parent="GameBoard/FenceSeg1"]
+position = Vector2( 315, -46 )
+scale = Vector2( 0.0679566, 0.0679566 )
+texture = ExtResource( 39 )
+
+[node name="Fence4" type="Sprite" parent="GameBoard/FenceSeg1"]
+position = Vector2( 441, -49 )
+scale = Vector2( 0.0679566, 0.0679566 )
+texture = ExtResource( 39 )
+
+[node name="Fence5" type="Sprite" parent="GameBoard/FenceSeg1"]
+position = Vector2( 566, -48 )
+scale = Vector2( 0.0679566, 0.0679566 )
+texture = ExtResource( 39 )
+
+[node name="Fence6" type="Sprite" parent="GameBoard/FenceSeg1"]
+position = Vector2( 689.587, -47.4124 )
+scale = Vector2( 0.0679566, 0.0679566 )
+texture = ExtResource( 39 )
+
+[node name="Fence7" type="Sprite" parent="GameBoard/FenceSeg1"]
+position = Vector2( 812.587, -46.4124 )
+scale = Vector2( 0.0679566, 0.0679566 )
+texture = ExtResource( 39 )
+
+[node name="Fence8" type="Sprite" parent="GameBoard/FenceSeg1"]
+position = Vector2( 937.587, -46.4124 )
+scale = Vector2( 0.0679566, 0.0679566 )
+texture = ExtResource( 39 )
+
+[node name="Fence9" type="Sprite" parent="GameBoard/FenceSeg1"]
+position = Vector2( 1063.59, -49.4124 )
+scale = Vector2( 0.0679566, 0.0679566 )
+texture = ExtResource( 39 )
+
+[node name="Fence10" type="Sprite" parent="GameBoard/FenceSeg1"]
+position = Vector2( 1187.59, -51 )
+scale = Vector2( 0.0679566, 0.0679566 )
+texture = ExtResource( 39 )
+
+[node name="Fence11" type="Sprite" parent="GameBoard/FenceSeg1"]
+position = Vector2( 1310.59, -50 )
+scale = Vector2( 0.0679566, 0.0679566 )
+texture = ExtResource( 39 )
+
+[node name="Fence12" type="Sprite" parent="GameBoard/FenceSeg1"]
+position = Vector2( 1435.59, -50 )
+scale = Vector2( 0.0679566, 0.0679566 )
+texture = ExtResource( 39 )
+
+[node name="Fence13" type="Sprite" parent="GameBoard/FenceSeg1"]
+position = Vector2( 1561.59, -53 )
+scale = Vector2( 0.0679566, 0.0679566 )
+texture = ExtResource( 39 )
+
+[node name="Fence14" type="Sprite" parent="GameBoard/FenceSeg1"]
+position = Vector2( 1686.59, -52 )
+scale = Vector2( 0.0679566, 0.0679566 )
+texture = ExtResource( 39 )
+
+[node name="Fence15" type="Sprite" parent="GameBoard/FenceSeg1"]
+position = Vector2( 1810.17, -51.4124 )
+scale = Vector2( 0.0679566, 0.0679566 )
+texture = ExtResource( 39 )
+
+[node name="Fence16" type="Sprite" parent="GameBoard/FenceSeg1"]
+position = Vector2( 1933.17, -50.4124 )
+scale = Vector2( 0.0679566, 0.0679566 )
+texture = ExtResource( 39 )
+
+[node name="Fence17" type="Sprite" parent="GameBoard/FenceSeg1"]
+position = Vector2( 2058.17, -50.4124 )
+scale = Vector2( 0.0679566, 0.0679566 )
+texture = ExtResource( 39 )
+
+[node name="Fence18" type="Sprite" parent="GameBoard/FenceSeg1"]
+position = Vector2( 2184.17, -53.4124 )
+scale = Vector2( 0.0679566, 0.0679566 )
+texture = ExtResource( 39 )
+
+[node name="FenceSeg3" type="Node2D" parent="GameBoard"]
+position = Vector2( 1189, 82.0002 )
+rotation = -4.71147
+scale = Vector2( 0.499401, 0.499401 )
+
+[node name="Fence" type="Sprite" parent="GameBoard/FenceSeg3"]
+position = Vector2( 67, -47 )
+scale = Vector2( 0.0679566, 0.0679566 )
+texture = ExtResource( 39 )
+
+[node name="Fence2" type="Sprite" parent="GameBoard/FenceSeg3"]
+position = Vector2( 190, -46 )
+scale = Vector2( 0.0679566, 0.0679566 )
+texture = ExtResource( 39 )
+
+[node name="Fence3" type="Sprite" parent="GameBoard/FenceSeg3"]
+position = Vector2( 315, -46 )
+scale = Vector2( 0.0679566, 0.0679566 )
+texture = ExtResource( 39 )
+
+[node name="Fence4" type="Sprite" parent="GameBoard/FenceSeg3"]
+position = Vector2( 441, -49 )
+scale = Vector2( 0.0679566, 0.0679566 )
+texture = ExtResource( 39 )
+
+[node name="Fence5" type="Sprite" parent="GameBoard/FenceSeg3"]
+position = Vector2( 566, -48 )
+scale = Vector2( 0.0679566, 0.0679566 )
+texture = ExtResource( 39 )
+
+[node name="Fence6" type="Sprite" parent="GameBoard/FenceSeg3"]
+position = Vector2( 689.587, -47.4124 )
+scale = Vector2( 0.0679566, 0.0679566 )
+texture = ExtResource( 39 )
+
+[node name="Fence7" type="Sprite" parent="GameBoard/FenceSeg3"]
+position = Vector2( 812.587, -46.4124 )
+scale = Vector2( 0.0679566, 0.0679566 )
+texture = ExtResource( 39 )
+
+[node name="Fence8" type="Sprite" parent="GameBoard/FenceSeg3"]
+position = Vector2( 937.587, -46.4124 )
+scale = Vector2( 0.0679566, 0.0679566 )
+texture = ExtResource( 39 )
+
+[node name="Fence9" type="Sprite" parent="GameBoard/FenceSeg3"]
+position = Vector2( 1063.59, -49.4124 )
+scale = Vector2( 0.0679566, 0.0679566 )
+texture = ExtResource( 39 )
+
+[node name="Fence10" type="Sprite" parent="GameBoard/FenceSeg3"]
+position = Vector2( 1187.59, -51 )
+scale = Vector2( 0.0679566, 0.0679566 )
+texture = ExtResource( 39 )
+
+[node name="Fence11" type="Sprite" parent="GameBoard/FenceSeg3"]
+position = Vector2( 1310.59, -50 )
+scale = Vector2( 0.0679566, 0.0679566 )
+texture = ExtResource( 39 )
+
+[node name="Fence12" type="Sprite" parent="GameBoard/FenceSeg3"]
+position = Vector2( 1435.59, -50 )
+scale = Vector2( 0.0679566, 0.0679566 )
+texture = ExtResource( 39 )
+
+[node name="Fence13" type="Sprite" parent="GameBoard/FenceSeg3"]
+position = Vector2( 1561.59, -53 )
+scale = Vector2( 0.0679566, 0.0679566 )
+texture = ExtResource( 39 )
+
+[node name="Fence14" type="Sprite" parent="GameBoard/FenceSeg3"]
+position = Vector2( 1686.59, -52 )
+scale = Vector2( 0.0679566, 0.0679566 )
+texture = ExtResource( 39 )
+
+[node name="Fence15" type="Sprite" parent="GameBoard/FenceSeg3"]
+position = Vector2( 1810.17, -51.4124 )
+scale = Vector2( 0.0679566, 0.0679566 )
+texture = ExtResource( 39 )
+
+[node name="Fence16" type="Sprite" parent="GameBoard/FenceSeg3"]
+position = Vector2( 1933.17, -50.4124 )
+scale = Vector2( 0.0679566, 0.0679566 )
+texture = ExtResource( 39 )
+
+[node name="Fence17" type="Sprite" parent="GameBoard/FenceSeg3"]
+position = Vector2( 2058.17, -50.4124 )
+scale = Vector2( 0.0679566, 0.0679566 )
+texture = ExtResource( 39 )
+
+[node name="Fence18" type="Sprite" parent="GameBoard/FenceSeg3"]
+position = Vector2( 2184.17, -53.4124 )
+scale = Vector2( 0.0679566, 0.0679566 )
+texture = ExtResource( 39 )
+
+[node name="FenceSeg4" type="Node2D" parent="GameBoard"]
+position = Vector2( 1203, 1196 )
+rotation = -3.14031
+scale = Vector2( 0.499401, 0.499401 )
+
+[node name="Fence" type="Sprite" parent="GameBoard/FenceSeg4"]
+position = Vector2( 67, -47 )
+scale = Vector2( 0.0679566, 0.0679566 )
+texture = ExtResource( 39 )
+
+[node name="Fence2" type="Sprite" parent="GameBoard/FenceSeg4"]
+position = Vector2( 190, -46 )
+scale = Vector2( 0.0679566, 0.0679566 )
+texture = ExtResource( 39 )
+
+[node name="Fence3" type="Sprite" parent="GameBoard/FenceSeg4"]
+position = Vector2( 315, -46 )
+scale = Vector2( 0.0679566, 0.0679566 )
+texture = ExtResource( 39 )
+
+[node name="Fence4" type="Sprite" parent="GameBoard/FenceSeg4"]
+position = Vector2( 441, -49 )
+scale = Vector2( 0.0679566, 0.0679566 )
+texture = ExtResource( 39 )
+
+[node name="Fence5" type="Sprite" parent="GameBoard/FenceSeg4"]
+position = Vector2( 566, -48 )
+scale = Vector2( 0.0679566, 0.0679566 )
+texture = ExtResource( 39 )
+
+[node name="Fence6" type="Sprite" parent="GameBoard/FenceSeg4"]
+position = Vector2( 689.587, -47.4124 )
+scale = Vector2( 0.0679566, 0.0679566 )
+texture = ExtResource( 39 )
+
+[node name="Fence7" type="Sprite" parent="GameBoard/FenceSeg4"]
+position = Vector2( 812.587, -46.4124 )
+scale = Vector2( 0.0679566, 0.0679566 )
+texture = ExtResource( 39 )
+
+[node name="Fence8" type="Sprite" parent="GameBoard/FenceSeg4"]
+position = Vector2( 937.587, -46.4124 )
+scale = Vector2( 0.0679566, 0.0679566 )
+texture = ExtResource( 39 )
+
+[node name="Fence9" type="Sprite" parent="GameBoard/FenceSeg4"]
+position = Vector2( 1063.59, -49.4124 )
+scale = Vector2( 0.0679566, 0.0679566 )
+texture = ExtResource( 39 )
+
+[node name="Fence10" type="Sprite" parent="GameBoard/FenceSeg4"]
+position = Vector2( 1187.59, -51 )
+scale = Vector2( 0.0679566, 0.0679566 )
+texture = ExtResource( 39 )
+
+[node name="Fence11" type="Sprite" parent="GameBoard/FenceSeg4"]
+position = Vector2( 1310.59, -50 )
+scale = Vector2( 0.0679566, 0.0679566 )
+texture = ExtResource( 39 )
+
+[node name="Fence12" type="Sprite" parent="GameBoard/FenceSeg4"]
+position = Vector2( 1435.59, -50 )
+scale = Vector2( 0.0679566, 0.0679566 )
+texture = ExtResource( 39 )
+
+[node name="Fence13" type="Sprite" parent="GameBoard/FenceSeg4"]
+position = Vector2( 1561.59, -53 )
+scale = Vector2( 0.0679566, 0.0679566 )
+texture = ExtResource( 39 )
+
+[node name="Fence14" type="Sprite" parent="GameBoard/FenceSeg4"]
+position = Vector2( 1686.59, -52 )
+scale = Vector2( 0.0679566, 0.0679566 )
+texture = ExtResource( 39 )
+
+[node name="Fence15" type="Sprite" parent="GameBoard/FenceSeg4"]
+position = Vector2( 1810.17, -51.4124 )
+scale = Vector2( 0.0679566, 0.0679566 )
+texture = ExtResource( 39 )
+
+[node name="Fence16" type="Sprite" parent="GameBoard/FenceSeg4"]
+position = Vector2( 1933.17, -50.4124 )
+scale = Vector2( 0.0679566, 0.0679566 )
+texture = ExtResource( 39 )
+
+[node name="Fence17" type="Sprite" parent="GameBoard/FenceSeg4"]
+position = Vector2( 2058.17, -50.4124 )
+scale = Vector2( 0.0679566, 0.0679566 )
+texture = ExtResource( 39 )
+
+[node name="Fence18" type="Sprite" parent="GameBoard/FenceSeg4"]
+position = Vector2( 2184.17, -53.4124 )
+scale = Vector2( 0.0679566, 0.0679566 )
+texture = ExtResource( 39 )
+
+[node name="FenceSeg2" type="Node2D" parent="GameBoard"]
+position = Vector2( 62.0001, 86 )
+rotation = -0.00390613
+scale = Vector2( 0.522159, 0.522159 )
+
+[node name="Fence" type="Sprite" parent="GameBoard/FenceSeg2"]
+position = Vector2( 67, -47 )
+scale = Vector2( 0.0679566, 0.0679566 )
+texture = ExtResource( 39 )
+
+[node name="Fence2" type="Sprite" parent="GameBoard/FenceSeg2"]
+position = Vector2( 190, -46 )
+scale = Vector2( 0.0679566, 0.0679566 )
+texture = ExtResource( 39 )
+
+[node name="Fence3" type="Sprite" parent="GameBoard/FenceSeg2"]
+position = Vector2( 315, -46 )
+scale = Vector2( 0.0679566, 0.0679566 )
+texture = ExtResource( 39 )
+
+[node name="Fence4" type="Sprite" parent="GameBoard/FenceSeg2"]
+position = Vector2( 441, -49 )
+scale = Vector2( 0.0679566, 0.0679566 )
+texture = ExtResource( 39 )
+
+[node name="Fence5" type="Sprite" parent="GameBoard/FenceSeg2"]
+position = Vector2( 566, -48 )
+scale = Vector2( 0.0679566, 0.0679566 )
+texture = ExtResource( 39 )
+
+[node name="Fence6" type="Sprite" parent="GameBoard/FenceSeg2"]
+position = Vector2( 689.587, -47.4124 )
+scale = Vector2( 0.0679566, 0.0679566 )
+texture = ExtResource( 39 )
+
+[node name="Fence7" type="Sprite" parent="GameBoard/FenceSeg2"]
+position = Vector2( 812.587, -46.4124 )
+scale = Vector2( 0.0679566, 0.0679566 )
+texture = ExtResource( 39 )
+
+[node name="Fence8" type="Sprite" parent="GameBoard/FenceSeg2"]
+position = Vector2( 938.227, -44.1289 )
+scale = Vector2( 0.0679566, 0.0679566 )
+texture = ExtResource( 39 )
+
+[node name="Fence9" type="Sprite" parent="GameBoard/FenceSeg2"]
+position = Vector2( 1061.23, -43.127 )
+scale = Vector2( 0.0679566, 0.0679566 )
+texture = ExtResource( 39 )
+
+[node name="Fence10" type="Sprite" parent="GameBoard/FenceSeg2"]
+position = Vector2( 1186.23, -43.1289 )
+scale = Vector2( 0.0679566, 0.0679566 )
+texture = ExtResource( 39 )
+
+[node name="Fence11" type="Sprite" parent="GameBoard/FenceSeg2"]
+position = Vector2( 1312.23, -46.127 )
+scale = Vector2( 0.0679566, 0.0679566 )
+texture = ExtResource( 39 )
+
+[node name="Fence12" type="Sprite" parent="GameBoard/FenceSeg2"]
+position = Vector2( 1437.23, -45.1289 )
+scale = Vector2( 0.0679566, 0.0679566 )
+texture = ExtResource( 39 )
+
+[node name="Fence13" type="Sprite" parent="GameBoard/FenceSeg2"]
+position = Vector2( 1560.81, -44.541 )
+scale = Vector2( 0.0679566, 0.0679566 )
+texture = ExtResource( 39 )
+
+[node name="Fence14" type="Sprite" parent="GameBoard/FenceSeg2"]
+position = Vector2( 1683.81, -43.541 )
+scale = Vector2( 0.0679566, 0.0679566 )
+texture = ExtResource( 39 )
+
+[node name="House" type="Sprite" parent="GameBoard"]
+position = Vector2( 1091, -41 )
+scale = Vector2( 0.524808, 0.524808 )
+texture = ExtResource( 38 )
+
+[node name="CellValidityIndicator" type="Node2D" parent="GameBoard"]
+script = ExtResource( 12 )
+ValidCellIndicator = SubResource( 9 )
+InvalidCellIndicator = SubResource( 10 )
+PlacedCellIndicator = SubResource( 15 )
+
+[node name="PlacedItems" type="YSort" parent="GameBoard"]
+
+[node name="MouseCapture" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 14 )
+
+[node name="SelectorArea" type="Control" parent="."]
+anchor_right = 0.16
+anchor_bottom = 1.0
+margin_left = 12.0
+rect_min_size = Vector2( 320, 0 )
+script = ExtResource( 9 )
+
+[node name="TossThump" type="AudioStreamPlayer" parent="SelectorArea"]
+stream = ExtResource( 31 )
+volume_db = -4.614
+
+[node name="SelectionClick" type="AudioStreamPlayer" parent="SelectorArea"]
+stream = ExtResource( 22 )
+volume_db = 0.2
+
+[node name="Panel" type="PanelContainer" parent="SelectorArea"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -92.0
+margin_bottom = 92.0
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="SelectorArea/Panel"]
+margin_left = 8.0
+margin_top = 4.0
+margin_right = 312.0
+margin_bottom = 241.0
+
+[node name="Layout" type="VBoxContainer" parent="SelectorArea/Panel/MarginContainer"]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 300.0
+margin_bottom = 233.0
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="SelectorArea/Panel/MarginContainer/Layout"]
+margin_right = 296.0
+margin_bottom = 31.0
+grow_horizontal = 2
+text = "Gardens of Gnome"
+align = 1
+autowrap = true
+
+[node name="HSeparator2" type="HSeparator" parent="SelectorArea/Panel/MarginContainer/Layout"]
+margin_top = 35.0
+margin_right = 296.0
+margin_bottom = 41.0
+
+[node name="BeginTurn" type="VBoxContainer" parent="SelectorArea/Panel/MarginContainer/Layout"]
+margin_top = 45.0
+margin_right = 296.0
+margin_bottom = 184.0
+
+[node name="MarginContainer" type="MarginContainer" parent="SelectorArea/Panel/MarginContainer/Layout/BeginTurn"]
+margin_right = 296.0
+margin_bottom = 80.0
+
+[node name="BeginTurnText" type="RichTextLabel" parent="SelectorArea/Panel/MarginContainer/Layout/BeginTurn/MarginContainer"]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 292.0
+margin_bottom = 76.0
+custom_fonts/normal_font = ExtResource( 16 )
+bbcode_enabled = true
+bbcode_text = "Arranging a natural garden is an art. Take care with where you put things to reach a high score!"
+text = "Arranging a natural garden is an art. Take care with where you put things to reach a high score!"
+fit_content_height = true
+
+[node name="BeginTurnButton" type="Button" parent="SelectorArea/Panel/MarginContainer/Layout/BeginTurn"]
+margin_top = 84.0
+margin_right = 296.0
+margin_bottom = 139.0
+text = "Let's Go!"
+
+[node name="ItemTypes" type="VBoxContainer" parent="SelectorArea/Panel/MarginContainer/Layout"]
+visible = false
+margin_top = 175.0
+margin_right = 286.0
+margin_bottom = 2328.0
+custom_constants/separation = 16
+
+[node name="MarginContainer" type="MarginContainer" parent="SelectorArea/Panel/MarginContainer/Layout/ItemTypes"]
+margin_right = 286.0
+margin_bottom = 113.0
+
+[node name="ItemTypesTutorialLabel" type="Label" parent="SelectorArea/Panel/MarginContainer/Layout/ItemTypes/MarginContainer"]
+margin_left = 4.0
+margin_top = 9.0
+margin_right = 282.0
+margin_bottom = 104.0
+custom_fonts/font = ExtResource( 16 )
+text = "Pick something from the list to put on the board first. Everything has its own opinions; experiment to see what pairings work out."
+autowrap = true
+
+[node name="Gnome" parent="SelectorArea/Panel/MarginContainer/Layout/ItemTypes" instance=ExtResource( 4 )]
+margin_top = 129.0
+margin_right = 286.0
+margin_bottom = 249.0
+script = ExtResource( 34 )
+RandomizationChance = 19
+TypeName = "Gnome"
+PlacementDescription = "A gnome, wondrous fair. Loves rocks and considers clover a delicacy. Afraid of water."
+ExtendedDescription = "A gnome, wondrous fair. Extra points when placed next to rocks or clover. Penalty points when placed next to water."
+
+[node name="ItemType" parent="SelectorArea/Panel/MarginContainer/Layout/ItemTypes/Gnome" instance=ExtResource( 19 )]
+
+[node name="RegTree" parent="SelectorArea/Panel/MarginContainer/Layout/ItemTypes" instance=ExtResource( 4 )]
+margin_top = 265.0
+margin_right = 286.0
+margin_bottom = 385.0
+RandomizationChance = 18
+TypeName = "Hardy Tree"
+PlacementDescription = "A highly unchoosy tree."
+ExtendedDescription = "A highly unchoosy tree, content with being planted next to anything. Probably would be boring at parties."
+
+[node name="ItemType" parent="SelectorArea/Panel/MarginContainer/Layout/ItemTypes/RegTree" instance=ExtResource( 8 )]
+
+[node name="Tree2" parent="SelectorArea/Panel/MarginContainer/Layout/ItemTypes" instance=ExtResource( 4 )]
+margin_top = 401.0
+margin_right = 286.0
+margin_bottom = 521.0
+RandomizationChance = 10
+TypeName = "Thwickleroot"
+PlacementDescription = "A tree grown into an odd shape that likes growing next to similar trees."
+ExtendedDescription = "A tree grown into an odd shape. Extra points when planted next to Thwickleroots or Spindletrees."
+
+[node name="ItemType" parent="SelectorArea/Panel/MarginContainer/Layout/ItemTypes/Tree2" instance=ExtResource( 13 )]
+
+[node name="Tree3" parent="SelectorArea/Panel/MarginContainer/Layout/ItemTypes" instance=ExtResource( 4 )]
+margin_top = 537.0
+margin_right = 286.0
+margin_bottom = 657.0
+RandomizationChance = 10
+TypeName = "Spindletree"
+PlacementDescription = "A tree that has grown into an unusual shape that likes growing next to similar trees."
+ExtendedDescription = "A tree grown into an unusual shape. Extra points when planted next to Thwickleroots or Spindletrees."
+
+[node name="ItemType" parent="SelectorArea/Panel/MarginContainer/Layout/ItemTypes/Tree3" instance=ExtResource( 23 )]
+
+[node name="Tree4" parent="SelectorArea/Panel/MarginContainer/Layout/ItemTypes" instance=ExtResource( 4 )]
+margin_top = 673.0
+margin_right = 286.0
+margin_bottom = 793.0
+RandomizationChance = 9
+TypeName = "Persnickety Tree"
+PlacementDescription = "A tree that loves water and can't abide sharing."
+ExtendedDescription = "A tree that loves water. Extra points when next to a pond. Penalty points for adjacent trees."
+
+[node name="ItemType" parent="SelectorArea/Panel/MarginContainer/Layout/ItemTypes/Tree4" instance=ExtResource( 27 )]
+
+[node name="LilRock" parent="SelectorArea/Panel/MarginContainer/Layout/ItemTypes" instance=ExtResource( 4 )]
+margin_top = 809.0
+margin_right = 286.0
+margin_bottom = 929.0
+RandomizationChance = 14
+TypeName = "Teensy Boulder"
+PlacementDescription = "A small rock. Great for shade if you're a toad."
+ExtendedDescription = "A baby rock. Extra points when placed next to larger ones. Maybe they feel safe that way."
+
+[node name="ItemType" parent="SelectorArea/Panel/MarginContainer/Layout/ItemTypes/LilRock" instance=ExtResource( 10 )]
+
+[node name="CHONKY" parent="SelectorArea/Panel/MarginContainer/Layout/ItemTypes" instance=ExtResource( 4 )]
+margin_top = 945.0
+margin_right = 286.0
+margin_bottom = 1065.0
+RandomizationChance = 7
+TypeName = "Chonky Boulder"
+PlacementDescription = "A big ol' boulder with a nice shape. Highly competitive."
+ExtendedDescription = "A big boulder. Point penalty when placed next to other Chonky Boulders, but it likes the attention from smaller rocks."
+
+[node name="ItemType" parent="SelectorArea/Panel/MarginContainer/Layout/ItemTypes/CHONKY" instance=ExtResource( 11 )]
+
+[node name="Clover" parent="SelectorArea/Panel/MarginContainer/Layout/ItemTypes" instance=ExtResource( 4 )]
+margin_top = 1081.0
+margin_right = 286.0
+margin_bottom = 1201.0
+RandomizationChance = 21
+TypeName = "Deku Moss"
+PlacementDescription = "A small plant that thrives in shade."
+ExtendedDescription = "A small clover. Extra points when planted near trees."
+
+[node name="ItemType" parent="SelectorArea/Panel/MarginContainer/Layout/ItemTypes/Clover" instance=ExtResource( 18 )]
+
+[node name="Pondlet" parent="SelectorArea/Panel/MarginContainer/Layout/ItemTypes" instance=ExtResource( 4 )]
+margin_top = 1217.0
+margin_right = 286.0
+margin_bottom = 1337.0
+RandomizationChance = 10
+MaxPlacementsPerChoice = 2
+TypeName = "Frumpy Pondlet"
+PlacementDescription = "A small pond, rather square."
+ExtendedDescription = "A small pond. Extra points when placed next to another pond."
+
+[node name="ItemType" parent="SelectorArea/Panel/MarginContainer/Layout/ItemTypes/Pondlet" instance=ExtResource( 2 )]
+
+[node name="Pondlet2" parent="SelectorArea/Panel/MarginContainer/Layout/ItemTypes" instance=ExtResource( 4 )]
+margin_top = 1353.0
+margin_right = 286.0
+margin_bottom = 1473.0
+RandomizationChance = 8
+MaxPlacementsPerChoice = 3
+TypeName = "Haughty Pondlet"
+PlacementDescription = "A small pond, rather snooty."
+ExtendedDescription = "A small pond. Extra points when placed next to other ponds. Fewer extra points when next to plain old square ponds."
+
+[node name="ItemType" parent="SelectorArea/Panel/MarginContainer/Layout/ItemTypes/Pondlet2" instance=ExtResource( 25 )]
+
+[node name="Flower" parent="SelectorArea/Panel/MarginContainer/Layout/ItemTypes" instance=ExtResource( 4 )]
+margin_top = 1489.0
+margin_right = 286.0
+margin_bottom = 1609.0
+RandomizationChance = 12
+TypeName = "Coffeegold"
+PlacementDescription = "A bright yellow flower. Needs space from similar flowers."
+ExtendedDescription = "A yellow flower. Extra points when planted next to anything but a rock. Penalty points when planted next to other Coffeegolds."
+
+[node name="ItemType" parent="SelectorArea/Panel/MarginContainer/Layout/ItemTypes/Flower" instance=ExtResource( 21 )]
+
+[node name="Flower2" parent="SelectorArea/Panel/MarginContainer/Layout/ItemTypes" instance=ExtResource( 4 )]
+margin_top = 1625.0
+margin_right = 286.0
+margin_bottom = 1745.0
+RandomizationChance = 4
+TypeName = "Annikosia"
+PlacementDescription = "A vibrant bush full of flowers."
+ExtendedDescription = "A bush of flowers. High amount of extra points when placed next to anything."
+
+[node name="ItemType" parent="SelectorArea/Panel/MarginContainer/Layout/ItemTypes/Flower2" instance=ExtResource( 29 )]
+
+[node name="Flower3" parent="SelectorArea/Panel/MarginContainer/Layout/ItemTypes" instance=ExtResource( 4 )]
+margin_top = 1625.0
+margin_right = 286.0
+margin_bottom = 1745.0
+RandomizationChance = 4
+TypeName = "Mimsibulb"
+PlacementDescription = "A rather stupid plant that is fascinated by its own reflection."
+ExtendedDescription = "A plant fascinated with its own reflection. Extra points when placed next to another Mimsibulb, but point penalties if it has more than one Mimsibulb neighbor. It gets confused."
+
+[node name="ItemType" parent="SelectorArea/Panel/MarginContainer/Layout/ItemTypes/Flower3" instance=ExtResource( 37 )]
+
+[node name="Bush" parent="SelectorArea/Panel/MarginContainer/Layout/ItemTypes" instance=ExtResource( 4 )]
+margin_top = 1761.0
+margin_right = 286.0
+margin_bottom = 1881.0
+RandomizationChance = 10
+TypeName = "Burbleberry Bush"
+PlacementDescription = "A highly sociable berry bush."
+ExtendedDescription = "A sociable berry bush. Extra points when planted next to other Burbleberry Bushes, scaling with the grove size."
+
+[node name="ItemType" parent="SelectorArea/Panel/MarginContainer/Layout/ItemTypes/Bush" instance=ExtResource( 24 )]
+
+[node name="LBush" parent="SelectorArea/Panel/MarginContainer/Layout/ItemTypes" instance=ExtResource( 4 )]
+margin_top = 1897.0
+margin_right = 286.0
+margin_bottom = 2017.0
+RandomizationChance = 9
+TypeName = "Blustery Hedge"
+PlacementDescription = "An L-shaped hedge that dislikes other L-shaped objects."
+ExtendedDescription = "An L-shaped hedge. Point penalty when placed next to anything else L-shaped."
+
+[node name="ItemType" parent="SelectorArea/Panel/MarginContainer/Layout/ItemTypes/LBush" instance=ExtResource( 28 )]
+
+[node name="Cattails" parent="SelectorArea/Panel/MarginContainer/Layout/ItemTypes" instance=ExtResource( 4 )]
+margin_top = 2033.0
+margin_right = 286.0
+margin_bottom = 2153.0
+RandomizationChance = 8
+TypeName = "Kattail"
+PlacementDescription = "A reed that loves the water."
+ExtendedDescription = "Marshy reeds. Extra points when planted next to water or other cattails."
+
+[node name="ItemType" parent="SelectorArea/Panel/MarginContainer/Layout/ItemTypes/Cattails" instance=ExtResource( 30 )]
+
+[node name="Trawtraw" parent="SelectorArea/Panel/MarginContainer/Layout/ItemTypes" instance=ExtResource( 4 )]
+margin_top = 2033.0
+margin_right = 286.0
+margin_bottom = 2153.0
+RandomizationChance = 16
+TypeName = "Trawtraw"
+PlacementDescription = "A red berry plant that likes company and hates getting wet."
+ExtendedDescription = "A gorgeous red berry plant, a little tart, a little sweet. Extra points when placed next to other berry plants. Point penalty if placed next to water."
+
+[node name="ItemType" parent="SelectorArea/Panel/MarginContainer/Layout/ItemTypes/Trawtraw" instance=ExtResource( 35 )]
+
+[node name="Mymbleleaf" parent="SelectorArea/Panel/MarginContainer/Layout/ItemTypes" instance=ExtResource( 4 )]
+margin_top = 2033.0
+margin_right = 286.0
+margin_bottom = 2153.0
+RandomizationChance = 4
+MaxPlacementsPerChoice = 2
+TypeName = "Mymbleleaf"
+PlacementDescription = "A colorful plant with extraordinary leaves."
+ExtendedDescription = "A very rare plant with extroardinary leaves. Keeps to itself."
+
+[node name="ItemType" parent="SelectorArea/Panel/MarginContainer/Layout/ItemTypes/Mymbleleaf" instance=ExtResource( 36 )]
+
+[node name="PlacingItems" type="VBoxContainer" parent="SelectorArea/Panel/MarginContainer/Layout"]
+visible = false
+margin_top = 188.0
+margin_right = 296.0
+margin_bottom = 705.0
+grow_vertical = 2
+custom_constants/separation = 12
+alignment = 1
+
+[node name="PlacementTutorialLabel" type="Label" parent="SelectorArea/Panel/MarginContainer/Layout/PlacingItems"]
+margin_right = 296.0
+margin_bottom = 287.0
+custom_fonts/font = ExtResource( 16 )
+text = "You won't know how many of your selection will need to be placed until you've picked. Bigger things tend to score better, but take care to weigh your possibilities--if you can't place every item, it'll cost you a life.
+
+Nobody likes to be lonely: except for that most intrepid first explorer of your garden, everything has to be planted next to something.
+"
+autowrap = true
+
+[node name="ExtendedDescriptionLabel" type="RichTextLabel" parent="SelectorArea/Panel/MarginContainer/Layout/PlacingItems"]
+margin_top = 299.0
+margin_right = 296.0
+margin_bottom = 347.0
+custom_fonts/normal_font = ExtResource( 16 )
+bbcode_enabled = true
+bbcode_text = "Extended description of the item you're placing."
+text = "Extended description of the item you're placing."
+fit_content_height = true
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="SelectorArea/Panel/MarginContainer/Layout/PlacingItems"]
+margin_top = 359.0
+margin_right = 296.0
+margin_bottom = 431.0
+
+[node name="PanelContainer" type="PanelContainer" parent="SelectorArea/Panel/MarginContainer/Layout/PlacingItems/AspectRatioContainer"]
+margin_left = 112.0
+margin_right = 184.0
+margin_bottom = 72.0
+rect_min_size = Vector2( 64, 72 )
+
+[node name="CenterContainer" type="CenterContainer" parent="SelectorArea/Panel/MarginContainer/Layout/PlacingItems/AspectRatioContainer/PanelContainer"]
+margin_left = 8.0
+margin_top = 4.0
+margin_right = 64.0
+margin_bottom = 60.0
+
+[node name="Centerer" type="Control" parent="SelectorArea/Panel/MarginContainer/Layout/PlacingItems/AspectRatioContainer/PanelContainer/CenterContainer"]
+margin_left = 28.0
+margin_top = 28.0
+margin_right = 28.0
+margin_bottom = 28.0
+
+[node name="ItemCountDie" parent="SelectorArea/Panel/MarginContainer/Layout/PlacingItems/AspectRatioContainer/PanelContainer/CenterContainer/Centerer" instance=ExtResource( 26 )]
+scale = Vector2( 0.0855509, 0.0855509 )
+RollSlowdownSpeed = 0.21
+RollClickAttenuationRate = 0.7
+
+[node name="PlacedItemsLabel" type="Label" parent="SelectorArea/Panel/MarginContainer/Layout/PlacingItems"]
+margin_top = 443.0
+margin_right = 296.0
+margin_bottom = 474.0
+text = "Placed 0/6"
+align = 1
+script = ExtResource( 15 )
+
+[node name="TossButton" type="Button" parent="SelectorArea/Panel/MarginContainer/Layout/PlacingItems"]
+margin_top = 486.0
+margin_right = 296.0
+margin_bottom = 517.0
+custom_colors/font_color_disabled = Color( 0.419608, 0.419608, 0.419608, 1 )
+custom_styles/hover = SubResource( 12 )
+custom_styles/pressed = SubResource( 13 )
+custom_styles/disabled = SubResource( 14 )
+custom_styles/normal = SubResource( 11 )
+text = "Toss the Rest"
+
+[node name="GameEnd" type="VBoxContainer" parent="SelectorArea/Panel/MarginContainer/Layout"]
+visible = false
+margin_top = 65.0
+margin_right = 404.0
+margin_bottom = 156.0
+
+[node name="MarginContainer" type="MarginContainer" parent="SelectorArea/Panel/MarginContainer/Layout/GameEnd"]
+margin_right = 404.0
+margin_bottom = 50.0
+
+[node name="Label" type="Label" parent="SelectorArea/Panel/MarginContainer/Layout/GameEnd/MarginContainer"]
+margin_left = 4.0
+margin_top = 13.0
+margin_right = 400.0
+margin_bottom = 36.0
+custom_fonts/font = ExtResource( 16 )
+text = "Your garden's complete! Plant another one?"
+autowrap = true
+
+[node name="BeginAgainButton" type="Button" parent="SelectorArea/Panel/MarginContainer/Layout/GameEnd"]
+margin_top = 54.0
+margin_right = 404.0
+margin_bottom = 91.0
+text = "Begin Again"
+
+[node name="HSeparator" type="HSeparator" parent="SelectorArea/Panel/MarginContainer/Layout"]
+margin_top = 188.0
+margin_right = 296.0
+margin_bottom = 194.0
+
+[node name="ScoreLabel" type="Label" parent="SelectorArea/Panel/MarginContainer/Layout"]
+margin_top = 198.0
+margin_right = 296.0
+margin_bottom = 229.0
+grow_horizontal = 0
+text = "Score: 0"
+align = 1
+script = ExtResource( 17 )
+
+[node name="Tween" type="Tween" parent="SelectorArea/Panel/MarginContainer/Layout/ScoreLabel"]
+
+[node name="Placer" type="Node2D" parent="."]
+script = ExtResource( 5 )
+GameBoardNodePath = NodePath("../GameBoard")
+
+[node name="EverythingHider" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0470588, 0.0470588, 0.0470588, 1 )
+
+[node name="Tween" type="Tween" parent="EverythingHider"]

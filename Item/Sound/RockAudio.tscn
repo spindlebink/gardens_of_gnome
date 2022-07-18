@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Item/Common/AudioPitchVariation.cs" type="Script" id=1]
+[ext_resource path="res://Item/Sound/boulder_drop.ogg" type="AudioStream" id=2]
+
+[node name="Audio" type="AudioStreamPlayer2D"]
+stream = ExtResource( 2 )
+volume_db = -1.061
+bus = "Ambience"
+script = ExtResource( 1 )

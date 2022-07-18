@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/dieclick.ogg-cc0635f54d9fafdffc344a328349982d.oggstr"
+
+[deps]
+
+source_file="res://GameUI/Resources/dieclick.ogg"
+dest_files=[ "res://.import/dieclick.ogg-cc0635f54d9fafdffc344a328349982d.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
